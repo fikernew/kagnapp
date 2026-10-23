@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-page: #f5f3ee;
+    --bg-card: #ffffff;
+    --text-ink: #1b1f1d;
+    --text-muted: #646b67;
+    --border-subtle: #e4e1d8;
+    --border-strong: #c8c4b7;
+    --brand-green: #0f6e4f;
+    --brand-green-hover: #0c573e;
+    --brand-green-light: #e6f4ee;
+    --brand-amber: #8a5a00;
+    --brand-amber-bg: #fbe6c2;
+    --brand-red: #b3261e;
+    --brand-red-bg: #fce8e6;
+    --brand-grey: #5f6368;
+    --brand-grey-bg: #f1f3f4;
+  }
+
+  [data-theme="dark"],
+  .dark {
+    --bg-page: #14181a;
+    --bg-card: #1d2326;
+    --text-ink: #f1f3f2;
+    --text-muted: #9aa29e;
+    --border-subtle: #2b3438;
+    --border-strong: #3f4c52;
+    --brand-green: #3fae86;
+    --brand-green-hover: #329672;
+    --brand-green-light: #163629;
+    --brand-amber: #f5b041;
+    --brand-amber-bg: #3a2a11;
+    --brand-red: #f28b82;
+    --brand-red-bg: #3d1c1a;
+    --brand-grey: #9aa0a6;
+    --brand-grey-bg: #292d30;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg-page: #14181a;
+      --bg-card: #1d2326;
+      --text-ink: #f1f3f2;
+      --text-muted: #9aa29e;
+      --border-subtle: #2b3438;
+      --border-strong: #3f4c52;
+      --brand-green: #3fae86;
+      --brand-green-hover: #329672;
+      --brand-green-light: #163629;
+      --brand-amber: #f5b041;
+      --brand-amber-bg: #3a2a11;
+      --brand-red: #f28b82;
+      --brand-red-bg: #3d1c1a;
+      --brand-grey: #9aa0a6;
+      --brand-grey-bg: #292d30;
+    }
+  }
+
+  body {
+    background-color: var(--bg-page);
+    color: var(--text-ink);
+    font-family: 'Noto Sans Ethiopic', 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    min-height: 100vh;
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+
+  /* Accessible focus ring */
+  *:focus-visible {
+    outline: 3px solid #1a73e8 !important;
+    outline-offset: 2px !important;
+  }
+}
+
+/* Tabular figures for numbers in tables and stats */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+  font-family: 'JetBrains Mono', 'Noto Sans Ethiopic', 'Noto Sans', monospace;
+}
+
+/* Laser sweep animation for viewfinder */
+@keyframes laserSweep {
+  0% {
+    top: 6%;
+    opacity: 0.8;
+  }
+  50% {
+    top: 90%;
+    opacity: 1;
+  }
+  100% {
+    top: 6%;
+    opacity: 0.8;
+  }
+}
+
+.animate-laser {
+  animation: laserSweep 1.6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-laser {
+    animation: none !important;
+    top: 50% !important;
+    opacity: 0.9 !important;
+  }
+}

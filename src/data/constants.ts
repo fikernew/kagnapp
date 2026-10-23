@@ -1,0 +1,113 @@
+import { Bank, Waiter } from '../types';
+
+export const WAITERS: Waiter[] = [
+  { id: 'w1', nameEn: 'Selam', nameAm: 'ሰላም' },
+  { id: 'w2', nameEn: 'Marta', nameAm: 'ማርታ' },
+  { id: 'w3', nameEn: 'Birhan', nameAm: 'ብርሃን' },
+  { id: 'w4', nameEn: 'Hiwot', nameAm: 'ሕይወት' },
+  { id: 'w5', nameEn: 'Tigist', nameAm: 'ትዕግስት' },
+  { id: 'w6', nameEn: 'Senait', nameAm: 'ሰናይት' },
+  { id: 'w7', nameEn: 'Helen', nameAm: 'ሄለን' },
+  { id: 'w8', nameEn: 'Yodit', nameAm: 'ዩዲት' },
+];
+
+export const BANKS: Bank[] = [
+  {
+    id: 'telebirr',
+    nameEn: 'Telebirr',
+    nameAm: 'ቴሌብር',
+    hasParser: true,
+    codePrefix: 'DAL',
+  },
+  {
+    id: 'cbe',
+    nameEn: 'Commercial Bank of Ethiopia',
+    nameAm: 'የኢትዮጵያ ንግድ ባንክ',
+    hasParser: true,
+    codePrefix: 'FT2',
+  },
+  {
+    id: 'awash',
+    nameEn: 'Awash',
+    nameAm: 'አዋሽ ባንክ',
+    hasParser: true,
+    codePrefix: 'AW9',
+  },
+  {
+    id: 'abyssinia',
+    nameEn: 'Abyssinia',
+    nameAm: 'አቢሲኒያ',
+    hasParser: false,
+    codePrefix: 'BOA',
+  },
+  {
+    id: 'dashen',
+    nameEn: 'Dashen',
+    nameAm: 'ዳሽን',
+    hasParser: false,
+    codePrefix: 'DSH',
+  },
+  {
+    id: 'wegagen',
+    nameEn: 'Wegagen',
+    nameAm: 'ወጋገን',
+    hasParser: false,
+    codePrefix: 'WGN',
+  },
+  {
+    id: 'zemen',
+    nameEn: 'Zemen',
+    nameAm: 'ዘመን',
+    hasParser: false,
+    codePrefix: 'ZMN',
+  },
+  {
+    id: 'nib',
+    nameEn: 'Nib',
+    nameAm: 'ንብ',
+    hasParser: false,
+    codePrefix: 'NIB',
+  },
+  {
+    id: 'hibret',
+    nameEn: 'Hibret',
+    nameAm: 'ህብረት',
+    hasParser: false,
+    codePrefix: 'HBR',
+  },
+  {
+    id: 'bunna',
+    nameEn: 'Bunna',
+    nameAm: 'ቡና',
+    hasParser: false,
+    codePrefix: 'BNA',
+  },
+  {
+    id: 'oromia',
+    nameEn: 'Oromia',
+    nameAm: 'ኦሮሚያ',
+    hasParser: false,
+    codePrefix: 'COOP',
+  },
+  {
+    id: 'anbessa',
+    nameEn: 'Lion / Anbessa',
+    nameAm: 'አንበሳ',
+    hasParser: false,
+    codePrefix: 'LIB',
+  },
+  {
+    id: 'enat',
+    nameEn: 'Enat',
+    nameAm: 'እናት',
+    hasParser: false,
+    codePrefix: 'ENT',
+  },
+  {
+    id: 'amhara',
+    nameEn: 'Amhara',
+    nameAm: 'አማራ',
+    hasParser: false,
+    codePrefix: 'AMH',
+  },
+];

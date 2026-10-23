@@ -1,0 +1,6 @@
+{
+  "name": "ቃኝ (Kagn) - Payment Verification & Tip Tracking",
+  "description": "Payment verification against bank SMS messages and waiter tip tracking for Ethiopian restaurants.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
