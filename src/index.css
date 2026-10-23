@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Force Tailwind v4 dark: variant to respect the .dark class and [data-theme="dark"] attribute instead of media query only */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *, .dark, .dark *));
+
 @layer base {
   :root {
     --bg-page: #f5f3ee;
@@ -36,26 +39,6 @@
     --brand-red-bg: #3d1c1a;
     --brand-grey: #9aa0a6;
     --brand-grey-bg: #292d30;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --bg-page: #14181a;
-      --bg-card: #1d2326;
-      --text-ink: #f1f3f2;
-      --text-muted: #9aa29e;
-      --border-subtle: #2b3438;
-      --border-strong: #3f4c52;
-      --brand-green: #3fae86;
-      --brand-green-hover: #329672;
-      --brand-green-light: #163629;
-      --brand-amber: #f5b041;
-      --brand-amber-bg: #3a2a11;
-      --brand-red: #f28b82;
-      --brand-red-bg: #3d1c1a;
-      --brand-grey: #9aa0a6;
-      --brand-grey-bg: #292d30;
-    }
   }
 
   body {

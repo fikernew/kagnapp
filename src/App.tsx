@@ -34,7 +34,11 @@ export default function App() {
   const [lang, setLang] = useState<Language>('am'); // Default: Amharic as required
   const [isDark, setIsDark] = useState<boolean>(() => {
     if (typeof window !== 'undefined') {
-      return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const savedTheme = localStorage.getItem('kagn_theme');
+      if (savedTheme) {
+        return savedTheme === 'dark';
+      }
+      return false; // Default to light mode so user immediately sees light theme
     }
     return false;
   });
@@ -49,9 +53,19 @@ export default function App() {
     if (isDark) {
       document.documentElement.setAttribute('data-theme', 'dark');
       document.documentElement.classList.add('dark');
+      try {
+        localStorage.setItem('kagn_theme', 'dark');
+      } catch {
+        // ignore
+      }
     } else {
       document.documentElement.setAttribute('data-theme', 'light');
       document.documentElement.classList.remove('dark');
+      try {
+        localStorage.setItem('kagn_theme', 'light');
+      } catch {
+        // ignore
+      }
     }
   }, [isDark]);
 
